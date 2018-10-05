@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+# Simple program to demonstrate usgae of the Google geocoder client
+
+import geocoding.clients
+import sys
+
+if len(sys.argv) < 3:
+    print("""Usage: %s API_KEY "SEARCH_QUERY" """ % sys.argv[0])
+    exit(1)
+
+API_KEY = sys.argv[1]
+searchtext = sys.argv[2]
+
+client = geocoding.clients.GoogleGeocoderClient(API_KEY)
+client.issue_query(searchtext)
+coords = client.get_coordinates()
+print(coords)
+
+exit(0)
