@@ -27,6 +27,25 @@ This can be modified by changing the server script:
 BIND_ADDRESS = ''
 BIND_PORT = 8888
 ```
+## API Usage
+### HTTP GET Endpoints
+All endpoints return JSON of the following format:
+```
+{"location": {"Latitude": 40.71455, "Longitude": -74.00714}}
+```
+If nothing was found, the result would look like this:
+```
+{"location": {}}
+```
+
+The user must pass in the search text as a query string in the following format:
+`?searchtext="new york city"`
+
+* /geocode - Attempt to geocode using Here and then Google as a fallback
+* /geocode/here - Attempt to geocode using Here
+* /geocode/google - Attempt to geocode using Google
+
+Example: `http://localhost:8888/geocode?searchtext=%22new%20york%20city%22`
 
 # Geocoding Clients
 There's also a standalone test client for both services, which can be invoked as follows
@@ -40,3 +59,5 @@ There's also a standalone test client for both services, which can be invoked as
 * Print statements could be implemented as system log messages
 * API could support a JSON format for carrying error messages
 * Unit tests should be written to test implementation
+* Pass in listening port to server script as command line argument
+* Use separate configuration file for API keys
