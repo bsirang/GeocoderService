@@ -1,7 +1,10 @@
 # Geocoding HTTP Service
-This repository contains a simple implementation of a RESTful HTTP API which provides a geocoding service using multiple geocoding service providers (Here and Google) in the backend.
+This repository contains a simple Python 3 implementation of a RESTful HTTP API which provides a geocoding service using multiple geocoding service providers (Here and Google) in the backend. This implementation uses only standard Python 3 modules.
 
 # Usage
+## Requirements
+Standard Python 3 environment.
+
 ## First Time
 Before using the server, you must acquire API keys for both backend services. Once the credentials are acquired, they should be stored in `geocoding/handlers.py`
 
